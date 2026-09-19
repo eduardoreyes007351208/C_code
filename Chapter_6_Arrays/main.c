@@ -1,10 +1,32 @@
 #include <stdio.h>
 
+void times2(int *a, int len) {
+    for (int i = 0; i < len; i++) {
+        printf("%d\n", a[i] * 2);
+    }
+}
+
+void times3(int a[], int len) {
+    for (int i = 0; i < len; i++) {
+        printf("%d\n", a[i] * 3);
+    }
+}
+
+void times4(int a[5], int len) {
+    for (int i = 0; i < len; i++) {
+        printf("%d\n", a[i] * 4);
+    }
+}
+
 int main (void) {
 
     float f[4];
     int x[12];
-    int a[5] = {22, 33, 55};
+    int a[5] = {11, 22, 33, 44, 55};
+    int *p;
+
+    p = a;
+
     int row, col;
     int b[2][5] = {
         {1, 2, 3, 4, 5},
@@ -34,5 +56,11 @@ int main (void) {
             printf("(%d, %d) = %d\n", row, col, b[row][col]);
         }
     }
+
+    printf("%d\n", *p);
+
+    times2(a, 5);
+    times3(a, 5);
+    times4(a, 5);
 
 }
