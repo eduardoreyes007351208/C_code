@@ -9,15 +9,16 @@
 
 // function prototypes
 int randNumGen (void);
-void fillArr (int *p[], int s);
+void fillArr (int *p, int s);
 
 // initialize main func
 int main (void) {
 
     int size = 20;
-    int arr1[size], *p1[size];
-
-    p1[size] = &arr1;
+    int arr1[size], *p1;
+    int test = randNumGen();
+    printf("%d\n", test);
+    p1 = arr1;
 
     fillArr(arr1, size);
 
@@ -28,14 +29,15 @@ int main (void) {
 }
 
 int randNumGen (void) {
-    int randNumb = rand() % 100;
+    int randNumb = rand() % 1000;
     return randNumb;
 }
 
-void fillArr (int *p[], int s) {
+void fillArr (int *p, int s) {
 
     for(int i = 0; i < s; i++) {
-       *p[i] = i;
+        int rand = randNumGen();
+        p[i] = rand;
     }
 
 }
