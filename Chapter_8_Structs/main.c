@@ -7,10 +7,12 @@ struct car
     int speed;
 };
 
+void setPrice (struct car *c, float newPrice);
 
 int main (void) {
 
     struct car saturn;
+    struct car saturn2 = {"Saturn SL/3", 16000.99, 180};
     
     saturn.name = "Saturn SL/2";
     saturn.price = 15999.99;
@@ -19,5 +21,17 @@ int main (void) {
     printf("Name:           %s\n", saturn.name);
     printf("Price:          %f\n", saturn.price);
     printf("Speed:          %d\n", saturn.speed);
+
+    printf("Name:           %s\n", saturn2.name);
+    printf("Price:          %f\n", saturn2.price);
+    printf("Speed:          %d\n", saturn2.speed);
+
+    setPrice(&saturn2, 13999.99);
+    printf("New Price:       %f\n", saturn2.price);
     
+}
+
+void setPrice (struct car *c, float newPrice) {
+    //(*c).price = newPrice;
+    c->price = newPrice;
 }
