@@ -7,7 +7,8 @@ struct car
     int speed;
 };
 
-void setPrice (struct car *c, float newPrice);
+void setPrice(struct car *c, float newPrice);
+void updateName(struct car *c, char *newName);
 
 int main (void) {
 
@@ -27,11 +28,17 @@ int main (void) {
     printf("Speed:          %d\n", saturn2.speed);
 
     setPrice(&saturn2, 13999.99);
-    printf("New Price:       %f\n", saturn2.price);
+    updateName(&saturn2, "Saturn SL/2");
+    printf("New Price:      %f\n", saturn2.price);
+    printf("New Name:       %s\n", saturn2.name);
     
 }
 
 void setPrice (struct car *c, float newPrice) {
     //(*c).price = newPrice;
     c->price = newPrice;
+}
+
+void updateName(struct car *c, char *newName) {
+    c->name = newName;
 }
